@@ -7,7 +7,9 @@
             Snake snake = new Snake();
             //Console.WriteLine("Initial Position is {0}", snake.initialPosition);
 
-            snake.DiceRoll(); //UC2
+            //snake.DiceRoll(); //UC2
+
+            snake.CheckforOption();
         }
     }
 }
