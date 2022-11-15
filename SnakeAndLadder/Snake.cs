@@ -8,7 +8,17 @@ namespace SnakeAndLadder
 {
     internal class Snake
     {
-        public int initialPosition = 0;
+        private object random;
+
+        //public int initialPosition = 0; //UC1
+
+        public void DiceRoll() //UC2
+        {
+            Random random = new Random();
+            int Dicecount = random.Next(1, 7);
+            Console.WriteLine("Dice Count is:" + Dicecount);
+        }
+
 
     }
 }
