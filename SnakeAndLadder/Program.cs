@@ -9,7 +9,9 @@
 
             //snake.DiceRoll(); //UC2
 
-            snake.CheckforOption();
+            //snake.CheckforOption(); //UC3
+
+            snake.Play();
         }
     }
 }

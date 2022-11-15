@@ -21,28 +21,66 @@ namespace SnakeAndLadder
         //    Console.WriteLine("Dice Count is:" + Dicecount);
         //}
 
-        public void CheckforOption() //UC3
+        //public void CheckforOption() //UC3
+        //{
+        //    int choice = random.Next(0, 3);
+        //    switch (choice)
+        //    {
+        //        case Noplay:
+        //            PlayerPosition += 0;
+        //            Console.WriteLine("player is at same place");
+        //            break;
+        //        case Ladder:
+        //            PlayerPosition += 0;
+        //            Console.WriteLine("player is at {0}", PlayerPosition);
+        //            break;
+        //        case Snakee:
+        //            PlayerPosition -= 0;
+        //            Console.WriteLine("player is at {0}", PlayerPosition);
+        //            break;
+        //        default:
+        //            Console.WriteLine("invalid data");
+        //            break;
+        //    }
+
+        //}
+
+        //uc4
+
+        public int DiceRoll()
+        {
+            int Dicecount = random.Next(0, 7);
+            return Dicecount;
+
+        }
+
+        public void Play()
         {
             int choice = random.Next(0, 3);
-            switch (choice)
+            while (PlayerPosition <= 100)
             {
-                case Noplay:
-                    PlayerPosition += 0;
-                    Console.WriteLine("player is at same place");
-                    break;
-                case Ladder:
-                    PlayerPosition += 0;
-                    Console.WriteLine("player is at {0}", PlayerPosition);
-                    break;
-                case Snakee:
-                    PlayerPosition -= 0;
-                    Console.WriteLine("player is at {0}", PlayerPosition);
-                    break;
-                default:
-                    Console.WriteLine("invalid data");
-                    break;
-            }
+                switch (choice)
+                {
+                    case Noplay:
+                        PlayerPosition += 0;
+                        break;
+                    case Ladder:
+                        PlayerPosition += DiceRoll();
+                        break;
+                    case Snakee:
+                        PlayerPosition -= DiceRoll();
+                        if (PlayerPosition < 0)
+                        {
+                            PlayerPosition = 0;
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("invalid data");
+                        break;
+                }
+                Console.WriteLine(PlayerPosition);
 
+            }
 
         }
     }
